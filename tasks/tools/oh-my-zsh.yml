@@ -16,7 +16,7 @@
   poll: 5
   become_user: "{{ user }}"
   args:
-    creates: /home/ubuntu/.oh-my-zsh
+    creates: "/home/{{ user }}/.oh-my-zsh"
 
 - name: randomize zsh theme
   shell: sed -i 's/robbyrussell/random/g' ~/.zshrc

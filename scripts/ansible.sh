@@ -16,8 +16,6 @@ fi
 
 export PUBLIC_IP=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running Name=tag:Name,Values=$TF_VAR_instance_name --region=us-east-2 | jq -r .Reservations[].Instances[].PublicIpAddress)
 
-echo $PUBLIC_IP
-
 echo "$PUBLIC_IP" > "tests/inventory"
 
-ansible-playbook -i ./tests/inventory --private-key ~/.ssh/lemur-pro.pem ./tests/test.yml 
+ansible-playbook -i ./tests/inventory --private-key ~/.ssh/lemur-pro.pem ./tests/test.yml

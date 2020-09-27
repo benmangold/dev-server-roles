@@ -14,7 +14,6 @@ if [[ -z "$TF_VAR_instance_name" ]]; then
     exit 1
 fi
 
-
 export PUBLIC_DNS=$(aws ec2 describe-instances --filters Name=instance-state-name,Values=running Name=tag:Name,Values=$TF_VAR_instance_name --region=us-east-2 | jq -r .Reservations[].Instances[].PublicDnsName)
 
 ssh -A ubuntu@$PUBLIC_DNS
