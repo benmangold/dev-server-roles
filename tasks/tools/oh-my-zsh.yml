@@ -11,10 +11,7 @@
   user: name={{ user }} shell={{ zsh_path.stdout }}
 
 - name: Install oh-my-zsh
-  # shell: wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
   shell: "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh"
-  # async: 15
-  # poll: 5
   become_user: "{{ user }}"
   args:
     creates: "/home/{{ user }}/.oh-my-zsh"
