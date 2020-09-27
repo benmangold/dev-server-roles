@@ -18,4 +18,4 @@ export PUBLIC_IP=$(aws ec2 describe-instances --filters Name=instance-state-name
 
 echo "$PUBLIC_IP" > "tests/inventory"
 
-ansible-playbook -i ./tests/inventory --private-key ~/.ssh/lemur-pro.pem ./tests/test.yml
+ansible-playbook -i ./tests/inventory --private-key ~/.ssh/lemur-pro.pem -e ansible_python_interpreter=/usr/bin/python3 ./tests/test.yml
