@@ -1,8 +1,5 @@
 ---
 
-- name: BUGFIX LOG
-  shell: echo BUGFIX
-
 - name: Update and Prune Packages
   apt:
     update_cache: yes
