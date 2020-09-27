@@ -16,7 +16,7 @@ Export AWS Credentials
 
 Add ssh key locally
 
-Set a required Terraform variable with your AWS key name
+Optionally, set a required Terraform variable with your AWS key name
 
 Example setup:
 
