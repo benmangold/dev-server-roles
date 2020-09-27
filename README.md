@@ -34,7 +34,6 @@ make destroy # destroy EC2
 
 ```
 
-
 Role Variables
 --------------
 
