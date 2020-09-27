@@ -10,7 +10,7 @@
 
 if [[ -z "$TF_VAR_instance_name" ]]; then
     echo "Must provide TF_VAR_instance_name in environment" 1>&2
-    echo "Run this script via `make connect`" 1>&2
+    echo "Run this script via `make ansible`" 1>&2
     exit 1
 fi
 
