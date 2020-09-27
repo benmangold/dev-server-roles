@@ -25,7 +25,7 @@ Example setup:
 export AWS_ACCESS_KEY_ID=$(lpass show access-key-id --json | jq -r '.[0].note')
 export AWS_SECRET_ACCESS_KEY=$(lpass show secret-access-key --json | jq -r '.[0].note')
 
-# Set up ssh key for local access
+# Set up ssh key for access
 ssh-add /path/to/my-key-name.pem
 
 # Optionally, export AWS key name for ssh as Terraform var:
