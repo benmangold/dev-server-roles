@@ -14,9 +14,9 @@ Before running `make` commands:
 
 Export AWS Credentials
 
-Set a required Terraform variable with your AWS key name
-
 Add ssh key locally
+
+Set a required Terraform variable with your AWS key name
 
 Example setup:
 
