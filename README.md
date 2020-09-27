@@ -7,6 +7,34 @@ postgresql, docker, nodejs 12, oh-my-zsh
 
 a role used by [benmangold/dev-server](https://github.com/benmangold/dev-server)
 
+Makefile
+--------
+
+Export AWS Credentials before running `make` commands for local dev
+
+Example command, exporting creds from LastPass notes `access-key-id` and `secret-access-key` with jq:
+
+```bash
+export AWS_ACCESS_KEY_ID=$(lpass show access-key-id --json | jq -r '.[0].note')
+export AWS_SECRET_ACCESS_KEY=$(lpass show tf-secret-access-key --json | jq -r '.[0].note')
+
+```
+
+```bash
+make init # initialize terraform
+
+make apply # create ephemeral EC2 instance for role dev. 
+
+# NOTE: wait 30s after apply before running ansible
+make ansible # run ansible role tasks against EC2
+
+make connect # connect to EC2 via ssh
+
+make destroy # destroy EC2
+
+```
+
+
 Role Variables
 --------------
 

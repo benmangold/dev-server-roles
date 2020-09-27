@@ -2,8 +2,9 @@
 
 - name: Update and Prune Packages
   apt:
+    # become:  yes
     update_cache: yes
-    upgrade: 'yes'
+    upgrade: yes
     autoremove: yes
     autoclean: yes
 
