@@ -10,13 +10,26 @@ a role used by [benmangold/dev-server](https://github.com/benmangold/dev-server)
 Makefile
 --------
 
-Export AWS Credentials before running `make` commands for local dev
+Before running `make` commands:
 
-Example command, exporting creds from LastPass notes `access-key-id` and `secret-access-key` with jq:
+Export AWS Credentials
+
+Set a required Terraform variable with your AWS key name
+
+Add ssh key locally
+
+Example setup:
 
 ```bash
+# Example command, exporting creds from LastPass notes `access-key-id` and `secret-access-key` with jq:
 export AWS_ACCESS_KEY_ID=$(lpass show access-key-id --json | jq -r '.[0].note')
-export AWS_SECRET_ACCESS_KEY=$(lpass show tf-secret-access-key --json | jq -r '.[0].note')
+export AWS_SECRET_ACCESS_KEY=$(lpass show secret-access-key --json | jq -r '.[0].note')
+
+# Set up ssh key for local access
+ssh-add /path/to/my-key-name.pem
+
+# Optionally, export AWS key name for ssh as Terraform var:
+export TF_VAR_key_name=my-key-name
 
 ```
 
