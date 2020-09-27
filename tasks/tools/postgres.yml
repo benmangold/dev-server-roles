@@ -7,7 +7,6 @@
   postgresql_user: name={{ db_user }} password={{ db_password }}
   become_user: postgres
 
-
 - name: Create postgres database
   become_user: postgres
   postgresql_db:
