@@ -7,7 +7,7 @@
 
 - name: Add Hashicorp Repository
   apt_repository:
-    repo: deb [arch=amd64] https://apt.releases.hashicorp.com bionic stable
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com bionic main
     state: present
 
 - name: Update apt and install Waypoint
